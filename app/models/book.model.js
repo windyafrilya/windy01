@@ -36,8 +36,7 @@ Book.findById = (id, result) => {
 // Membuat data buku baru
 Book.create = (newBook, result) => {
  console.log(newBook);
- sql.query("INSERT INTO books (title, description, images)
-VALUES (?,?,?)",
+ sql.query("INSERT INTO books (title, description, images) VALUES (?,?,?)",
 [newBook.title, newBook.description, newBook.images], (err,
     res) => {
      if (err) {
@@ -54,8 +53,7 @@ VALUES (?,?,?)",
     // Mengupdate data buku yang memiliki id = id
     Book.updateById = ( id, Book, result) => {
      sql.query(
-     "UPDATE Books SET title = ?, description = ?, images = ?
-    WHERE id = ?",
+     "UPDATE Books SET title = ?, description = ?, images = ?  WHERE id = ?",
      [Book.title, Book.description, Book.images, id],
      (err, res) => {
      if (err) {
